@@ -27,9 +27,13 @@ if(isset($_POST['id'])){
     file_put_contents('../db/data.json', json_encode($json_arr), JSON_PRETTY_PRINT);
 
     foreach($json_arr as $data){
-        
+        $input_name = $_POST['username'];
+        $input_email = $_POST['email'];
+        $input_password = $_POST['password'];
         if($data->id == $id){
-            $data->
+            $data-> username = $input_name;
+            $data-> email = $input_email;
+            $data-> password = $input_password;
         }
     }
 }

@@ -2,8 +2,8 @@
 
 include "includes/header.php";
 
-if(!isset($_SESSION['login'])) {
-    header("Location: login.php");
+if(!isset($_SESSION['auth'])) {
+    header("Location: signin.php");
 }
 
 include "includes/nav.php";
