@@ -16,7 +16,6 @@ if (null !== $_REQUEST['user_id']) {
             break;
         }
     }
-
     header('Location: ../dashboard.php');
 
 } else {

@@ -6,39 +6,11 @@ include 'includes/header.php';
 
 include 'includes/nav.php';
 
+include 'handlers/handle_update.php';
+
 if(!isset($_SESSION['auth'])) {
     header("Location: signin.php");
 }
-
-if(isset($_POST['id'])){
-    $user_id = $_POST['id'];
-    $data = file_get_contents('../db/data.json');
-    $json_arr = json_decode($data, true);
-    $arr_index = [];
-    foreach ($json_arr as $db) {
-        if($value['id'] == $user_id){
-            $arr_index[] = $index_id;
-        }
-    }
-    foreach ($arr_index as $i) {
-        unset($json_arr[$i]);
-    }
-    $json_arr = array_values($json_arr);
-    file_put_contents('../db/data.json', json_encode($json_arr), JSON_PRETTY_PRINT);
-
-    foreach($json_arr as $data){
-        $input_name = $_POST['username'];
-        $input_email = $_POST['email'];
-        $input_password = $_POST['password'];
-        if($data->id == $id){
-            $data-> username = $input_name;
-            $data-> email = $input_email;
-            $data-> password = $input_password;
-        }
-    }
-}
-
-
 
 ?>
 
@@ -116,6 +88,11 @@ if(isset($_POST['id'])){
                         </div>
                         <div class="modal-body">
                             <form action="handlers/handle_update.php" method="post">
+                                <div class="mb-3">
+                                    <!-- <?php ?>
+                                    <input type='hidden' name='id' placeholder='id' class='form-control' value=''>
+                                    <?php ?> -->
+                                </div>
                                 <div class="mb-3">
                                     <input type="text" name="edited_name" placeholder="Username Plz" class="form-control">
                                 </div>

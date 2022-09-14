@@ -1,6 +1,6 @@
 [
     {
-        "id": "630dda3a8c2a3",
+        "id": "6320b915cd74b",
         "username": "omar",
         "email": "omar@omar.com",
         "password": "123456789",
@@ -8,11 +8,19 @@
         "image": "uploads\/..\/uploads\/2012-11-15 11.50.43.jpg"
     },
     {
-        "id": "6315f2b51e6e7",
-        "username": "hema",
+        "id": "6320b92650eaa",
+        "username": "moka",
         "email": "hema@hema.com",
         "password": "123456789",
-        "avatar": "11924237_943002309099915_67925156919926149_n.jpg",
-        "image": "uploads\/..\/uploads\/11924237_943002309099915_67925156919926149_n.jpg"
+        "avatar": "2012-11-15 11.51.02.jpg",
+        "image": "uploads\/..\/uploads\/2012-11-15 11.51.02.jpg"
+    },
+    {
+        "id": "6320d2ac6db22",
+        "username": "dodo",
+        "email": "dodo@dodo.com",
+        "password": "123456789",
+        "avatar": "Photo-0024.JPG",
+        "image": "uploads\/..\/uploads\/Photo-0024.JPG"
     }
 ]
