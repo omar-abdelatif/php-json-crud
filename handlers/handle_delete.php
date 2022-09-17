@@ -1,5 +1,9 @@
 <?php
 
+if(!isset($_SESSION['auth'])) {
+    header("Location: signin.php");
+}
+
 include "../core/functions.php";
 
 if (null !== $_REQUEST['user_id']) {

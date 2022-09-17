@@ -75,44 +75,36 @@ if(!isset($_SESSION['auth'])) {
                                 echo "</tr>";
                                 $i++;
                             }
+                            echo "<div class='modal fade' id='exampleModal' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+                                <div class='modal-dialog'>
+                                    <div class='modal-content'>
+                                        <div class='modal-header'>
+                                            <h5 class='modal-title text-dark' id='exampleModalLabel'>Edit User Data</h5>
+                                            <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                                        </div>
+                                        <div class='modal-body'>
+                                            <form action='handlers/handle_update.php?user_id=$user[id]' method='post'>
+                                                <div class='mb-3'>
+                                                    <input type='text' name='edited_name' placeholder='Username Plz' class='form-control'>
+                                                </div>
+                                                <div class='mb-3'>
+                                                    <input type='password' name='edited_password' placeholder='New Password Plz' class='form-control'>
+                                                </div>
+                                                <div class='mb-3'>
+                                                    <input type='text' name='edited_email' placeholder='New email Plz' class='form-control'>
+                                                </div>
+                                                <div class='modal-footer p-0'>
+                                                    <button type='submit' name='submit' class='btn btn-primary'>Submit</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>";
                         }
                     ?>
                 </tbody>
             </table>
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title text-dark" id="exampleModalLabel">Edit User Data</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form action="handlers/handle_update.php" method="post">
-                                <div class="mb-3">
-                                    <!-- <?php ?>
-                                    <input type='hidden' name='id' placeholder='id' class='form-control' value=''>
-                                    <?php ?> -->
-                                </div>
-                                <div class="mb-3">
-                                    <input type="text" name="edited_name" placeholder="Username Plz" class="form-control">
-                                </div>
-                                <div class="mb-3">
-                                    <input type="password" name="edited_password" placeholder="New Password Plz" class="form-control">
-                                </div>
-                                <div class="mb-3">
-                                    <input type="text" name="edited_email" placeholder="New email Plz" class="form-control">
-                                </div>
-                                <!-- <div class="mb-3">
-                                    <input type="file" name="avatar" class="form-control" id="avatar">
-                                </div> -->
-                                <div class="modal-footer p-0">
-                                    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
