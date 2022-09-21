@@ -33,20 +33,22 @@ if(!isset($_SESSION['auth'])) {
                         $data = json_decode( $data, true );
                         $i = 1;
                         foreach ( $data as $user ) {
-                            if ($user['username'] == 'omar' ){
-                                echo "<tr>";
-                                echo "<td style='vertical-align: middle' name='row-id'>$user[id]</td>";
-                                echo "<td style='vertical-align: middle'>$user[username]</td>";
-                                echo "<td style='vertical-align: middle'>$user[email]</td>";
-                                echo "<td><img src='$user[image]' alt='$user[username]' style='width: 85px; height: 85px;' class='img-fluid mx-auto'></td>";
-                                echo "<td style='vertical-align: middle'>
-                                <a type='button' class='btn btn-primary d-block w-50 mx-auto' data-bs-toggle='modal' name='edit' href='#exampleModal'>Edit</a>
-                                </td>";
-                                echo "</tr>";
-                                $i++;
-                            } else {
-                                echo "<tr>";
-                                echo "<td style='vertical-align: middle' name='row-id'>$user[id]</td>";
+                            // if ($user['id'] == '1' ){
+                            //     echo "<tr>";
+                            //     echo "<td style='vertical-align: middle' name='row-id'>$user[id]</td>";
+                            //     echo "<td style='vertical-align: middle'>$user[username]</td>";
+                            //     echo "<td style='vertical-align: middle'>$user[email]</td>";
+                            //     echo "<td><img src='$user[image]' alt='$user[username]' style='width: 85px; height: 85px;' class='img-fluid mx-auto'></td>";
+                            //     echo "<td style='vertical-align: middle'>
+                            //     <a type='button' class='btn btn-primary d-block w-50 mx-auto' data-bs-toggle='modal' name='edit' href='#exampleModal'>Edit</a>
+                            //     </td>";
+                            //     echo "</tr>";
+                            //     $i++;
+                            // } else {
+                                
+                            // }
+                            echo "<tr>";
+                                echo "<td style='vertical-align: middle'>$user[id]</td>";
                                 echo "<td style='vertical-align: middle'>$user[username]</td>";
                                 echo "<td style='vertical-align: middle'>$user[email]</td>";
                                 echo "<td><img src='$user[image]' alt='$user[username]' style='width: 85px; height: 85px;' class='img-fluid mx-auto'></td>";
@@ -62,8 +64,9 @@ if(!isset($_SESSION['auth'])) {
                                                     <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
                                                 </div>
                                                 <div class='modal-body'>
-                                                    <form action='handlers/handle_delete.php?user_id=$user[id]' method='post'>
+                                                    <form action='handlers/handle_delete.php?user_id=$user[id]' method='POST'>
                                                         <div class='d-flex justify-content-evenly'>
+                                                            <input type='text' name='id' value='$user[id]'>
                                                             <input type='submit' class='btn btn-primary' value='Submit'>
                                                             <button type='button' class='btn btn-danger' data-bs-dismiss='modal'>Cancel</button>
                                                         </div>
@@ -74,7 +77,6 @@ if(!isset($_SESSION['auth'])) {
                                     </div>";
                                 echo "</tr>";
                                 $i++;
-                            }
                             echo "<div class='modal fade' id='exampleModal' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
                                 <div class='modal-dialog'>
                                     <div class='modal-content'>

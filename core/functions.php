@@ -39,13 +39,8 @@ function move_file( $temp_name, $location, $Url ) {
     return $error;
 }
 
-function createId() {
-    $unique = uniqid();
-    return $unique;
-}
-
 function getUsers(){
-    return json_decode(file_get_contents(__DIR__ . '/data.json'), true);
+    return json_decode(file_get_contents('./db/data.json'), true);
 }
 
 function getUserById($id){

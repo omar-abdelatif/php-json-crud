@@ -60,8 +60,12 @@ if ( isset( $_POST[ 'username' ] ) || isset( $_POST[ 'email' ] ) || isset( $_POS
 
         $ImgUrl = move_file( $temp_name, $location, $Url );
 
+        $last_item = end($array_data);
+
+        $last_id = $last_item['id'];
+
         $extra = [
-            'id' => createId(),
+            'id' => ++$last_id,
             'username' => $username,
             'email' => $email,
             'password' => $password,
