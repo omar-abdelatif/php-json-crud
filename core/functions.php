@@ -67,7 +67,16 @@ function updateUser($data, $id){
     return $updateUser;
 }
 
-function putJson($users)
-{
-    file_put_contents(__DIR__ . '/users.json', json_encode($users, JSON_PRETTY_PRINT));
+function putJson($users){
+    file_put_contents('../db/data.json', json_encode($users, JSON_PRETTY_PRINT));
 }
+
+// function deleteUser($id){
+//     $users = getUsers();
+//     foreach($users as $i => $user){
+//         if($user['id'] == $id){
+//             unset($users[$i]);
+//         }
+//     }
+//     putJson($users);
+// }

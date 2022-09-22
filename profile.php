@@ -30,6 +30,10 @@ for ($i = 0; $i < count($data); $i++) {
             background-size: cover; background-position: center; width: 200px; height: 200px;" class="img-fluid border rounded-circle mb-5 mx-auto"></div>
             <h2 class="border p-3 mb-5 bg-success text-white">
                 Name: 
+                <?php print_r($_SESSION['auth']) ; ?>
+            </h2>
+            <h2 class="border p-3 mb-5 bg-success text-white">
+                Name: 
                 <?php echo $_SESSION['auth']['0']; ?>
             </h2>
             <h2 class="border p-3 bg-primary text-white">

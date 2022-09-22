@@ -14,29 +14,5 @@
         "password": "123456789",
         "avatar": "2012-11-15 11.51.02.jpg",
         "image": "uploads\/..\/uploads\/2012-11-15 11.51.02.jpg"
-    },
-    {
-        "id": 3,
-        "username": "mesho",
-        "email": "mesho@mesho.com",
-        "password": "123456789",
-        "avatar": "kerimallah.jpg",
-        "image": "uploads\/..\/uploads\/kerimallah.jpg"
-    },
-    {
-        "id": 4,
-        "username": "dodo",
-        "email": "dodo@dodo.com",
-        "password": "123456789",
-        "avatar": "Photo-0024.JPG",
-        "image": "uploads\/..\/uploads\/Photo-0024.JPG"
-    },
-    {
-        "id": 5,
-        "username": "mama",
-        "email": "mama@mama.com",
-        "password": "123465798",
-        "avatar": "Photo-0017.JPG",
-        "image": "uploads\/..\/uploads\/Photo-0017.JPG"
     }
 ]

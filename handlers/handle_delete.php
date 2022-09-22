@@ -6,63 +6,18 @@ if(!isset($_SESSION['auth'])) {
 
 include '../core/functions.php';
 
-if (isset($_POST['id'])) {
-
-    $id = $_POST['id'];
-
+if ( null !== $_REQUEST['user_id']) {
+    $id = $_REQUEST['user_id'];
+    echo "this is page for id ".$id;
     $data = json_decode(file_get_contents('../db/data.json'), true);
-
-    echo $id;
-
-    // $i=1;
-    // foreach ($data as $i => $db) {
-    //     if($db->id == $id){
-    //         unset($data[$i]);
-    //     }
-    //     $save = json_encode($data, JSON_PRETTY_PRINT);
-    //     file_put_contents('../db/data.json', $save);
-    //     break;
-    // $i++;
-    // }
-
-    // foreach($data as $element){
-    //     if($element->id == $id){
-    //         unset($data[$i]);
-    //     }
-    //     $save = json_encode($data, JSON_PRETTY_PRINT);
-    //     file_put_contents('../db/data.json', $save);
-    // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    $i=1;
+    foreach ($data as $i => $db) {
+        if($db['id'] == $id){
+            unset($data[$i]);
+        }
+        $save = json_encode($data, JSON_PRETTY_PRINT);
+        file_put_contents('../db/data.json', $save);
+    $i++;
+    }
     header('Location: ../dashboard.php');
-
-} else {
-    redirect('../error.php');
 }

@@ -86,7 +86,7 @@ if ( isset( $_POST[ 'username' ] ) || isset( $_POST[ 'email' ] ) || isset( $_POS
         }
 
 
-        $_SESSION[ 'auth' ] = [ $username, $email, $avatar, $ImgUrl ];
+        $_SESSION[ 'auth' ] = [ $username, $email, $id, $ImgUrl ];
 
         redirect( '../index.php' );
 
