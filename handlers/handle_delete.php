@@ -8,7 +8,6 @@ include '../core/functions.php';
 
 if ( null !== $_REQUEST['user_id']) {
     $id = $_REQUEST['user_id'];
-    echo "this is page for id ".$id;
     $data = json_decode(file_get_contents('../db/data.json'), true);
     $i=1;
     foreach ($data as $i => $db) {

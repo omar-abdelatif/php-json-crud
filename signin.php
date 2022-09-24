@@ -1,10 +1,6 @@
-<?php
+<?php include "includes/header.php"; ?>
+<?php include "includes/nav.php"; ?>
 
-include "includes/header.php";
-
-include "includes/nav.php";
-
-?>
 
 <div class="form mx-auto mt-5 text-center">
     <div class="title">

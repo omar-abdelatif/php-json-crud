@@ -1,11 +1,5 @@
-<?php
-
-include "includes/header.php";
-
-include "includes/nav.php";
-
-?>
-
+<?php include "includes/header.php"; ?>
+<?php include "includes/nav.php"; ?>
 <div class="form mx-auto mt-5 text-center">
     <div class="title">
         <h3 class="border p-3 w-50 mx-auto">Sign Up</h3>
@@ -56,5 +50,4 @@ include "includes/nav.php";
         </div>
     </form>
 </div>
-
 <?php include "includes/footer.php"; ?>

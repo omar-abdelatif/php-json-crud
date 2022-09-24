@@ -13,7 +13,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="signup.php">SignUp</a>
                     </li>
-                <?php elseif ($_SESSION['auth'][0] === 'omar' ) : ?>
+                <?php elseif ($_SESSION['auth'][0] == 'admin' ) : ?>
                     <li class="nav-item">
                         <a class="nav-link" href="index.php">Home</a>
                     </li>
