@@ -1,9 +1,10 @@
 <?php
 session_start();
+if(!isset($_SESSION['auth'])){ header('location: ../dashboard.php'); }
 include '../core/functions.php';
 include '../core/validations.php';
 $errors = [];
-if ( isset( $_POST[ 'username' ] ) || isset( $_POST[ 'email' ] ) || isset( $_POST[ 'password' ] ) || isset( $_POST[ 'avatar' ] ) ) {
+if ( isset( $_POST[ 'username' ] ) || isset( $_POST[ 'email' ] ) || isset( $_POST[ 'password' ] ) ) {
     foreach ( $_POST as $key => $value ) {
         $$key = sanitizeInput( $value );
     }
@@ -52,19 +53,21 @@ if ( isset( $_POST[ 'username' ] ) || isset( $_POST[ 'email' ] ) || isset( $_POS
         $final_data = json_encode( $array_data, JSON_PRETTY_PRINT );
         if ( file_put_contents( '../db/data.json', $final_data ) ) {
             $_SESSION[ 'success' ] = 'You have registered successfully';
-            redirect( '../index.php' );
+                redirect('../profile.php');
+            // if(){
+            //     redirect( '../dashboard.php' );
+            // } else {
+            //     redirect('../profile.php');
+            // }
         } else {
             $_SESSION[ 'errors' ] = 'Something went wrong';
             redirect( '../signup.php' );
         }
-        $_SESSION[ 'auth' ] = [ $username, $email ];
-        redirect( '../index.php' );
-        die();
-    } else {
+        $_SESSION[ 'auth' ] = [$id, $username, $email ];
+    } else{
         $_SESSION[ 'errors' ] = $errors;
         redirect( '../signup.php' );
-        die();
     }
-} else {
+} else{
     $errors[] = "<h1 class='error'>No User With This Data</h1>";
 }

@@ -38,3 +38,10 @@ function updateImgPath($tmp_name, $path, $link){
         return $link;
     }
 }
+function getLastId(){
+    $data = json_decode(file_get_contents('../db/data.json'), true);
+    if(empty($data)){
+        return 1;
+    }
+    return $data[count($data)-1]['id']+1;
+}
