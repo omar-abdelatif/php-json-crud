@@ -11,13 +11,11 @@ if ( null !== $_REQUEST['user_id']) {
     $data = json_decode(file_get_contents('../db/data.json'), true);
     $i=1;
     foreach ($data as $i => $db) {
-        $avatar = $db['image'];
+        $avatar = $db['avatar'];
         $path = "../uploads/";
         if($db['id'] == $id){
             unset($data[$i]);
-        }
-        if($db['image']){
-            removeFromDir($path, $avatar);
+            unlink($path.$avatar);
         }
         $save = json_encode($data, JSON_PRETTY_PRINT);
         file_put_contents('../db/data.json', $save);
