@@ -45,6 +45,7 @@ function getLastId(){
     }
     return $data[count($data)-1]['id']+1;
 }
-function removeFromDir(){
-    
+function removeFromDir($path, $avatar){
+    unlink($path.$avatar);
+    return $path;
 }
