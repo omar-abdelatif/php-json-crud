@@ -1,8 +1,8 @@
 <?php
 
-if(!isset($_SESSION['auth'])) {
-    header("Location: signin.php");
-}
+// if(!isset($_SESSION['auth'])) {
+//     header("Location: ../signout.php");
+// }
 
 include '../core/functions.php';
 
@@ -11,8 +11,12 @@ if ( null !== $_REQUEST['user_id']) {
     $data = json_decode(file_get_contents('../db/data.json'), true);
     $i=1;
     foreach ($data as $i => $db) {
+        // $avatar = ;
         if($db['id'] == $id){
             unset($data[$i]);
+        }
+        if(file_exists($db['image'])){
+            unlink($db['image']);
         }
         $save = json_encode($data, JSON_PRETTY_PRINT);
         file_put_contents('../db/data.json', $save);

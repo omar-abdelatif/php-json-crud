@@ -1,7 +1,6 @@
 <?php include "includes/header.php"; ?>
 <?php include "includes/nav.php"; ?>
 
-
 <div class="form mx-auto mt-5 text-center">
     <div class="title">
         <h3 class="border p-3 w-50 mx-auto">Sign In</h3>
@@ -39,7 +38,6 @@
                 <a class="btn p-0" style="color:white; text-decoration:underline;" href="signup.php">Create One</a>
             </div>
         </div>
-
         <div class="d-flex justify-content-center mt-4 mb-4">
             <input type="submit" class="btn btn-primary" value="Signup">
             <input type="reset" class="btn btn-danger" value="Reset">
