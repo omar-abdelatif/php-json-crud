@@ -13,7 +13,7 @@ $errors = [];
 if ( isset( $_POST[ 'username' ] ) || isset( $_POST[ 'password' ] ) ) {
 
     foreach ( $_POST as $key => $value ) {
-        $$key = sanitizeInput( $value );
+        $key = sanitizeInput($value);
     }
 
     if ( !requiredVal( $username ) ) {

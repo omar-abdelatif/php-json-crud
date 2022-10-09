@@ -1,11 +1,6 @@
 <?php
-
-// if(!isset($_SESSION['auth'])) {
-//     header("Location: ../signout.php");
-// }
-
+if(!isset($_SESSION['auth'])) { header("Location: ../signout.php"); }
 include '../core/functions.php';
-
 if ( null !== $_REQUEST['user_id']) {
     $id = $_REQUEST['user_id'];
     $data = json_decode(file_get_contents('../db/data.json'), true);
