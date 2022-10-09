@@ -39,7 +39,7 @@
             </div>
         </div>
         <div class="d-flex justify-content-center mt-4 mb-4">
-            <input type="submit" class="btn btn-primary" value="Signup">
+            <input type="submit" class="btn btn-primary" value="Login">
             <input type="reset" class="btn btn-danger" value="Reset">
         </div>
     </form>
